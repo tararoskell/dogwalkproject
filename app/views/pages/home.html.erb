@@ -1,2 +1,11 @@
-<h1>Great Dog Walks Home</h1>
-<p>Share your great dog walks</p>
+<h1>Great Dog Walks</h1>
+<h3>Share your great dog walks.</h3>
+<p>Are there places you have walked your dog that you think other people woud enjoy then why not share them here. You will also be able to be find new places you could walk your dog</p>
+<p>
+	<% if user_signed_in? %>
+		<p></p>
+	<% else %>
+		<%= link_to "Sign Up Now!", new_user_registration_path , class: "btn btn-large btn-primary" %> <br />or <%= link_to "sign in", new_user_session_path %></a>
+	<% end %>	
+</p>
+
