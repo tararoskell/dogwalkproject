@@ -1,0 +1,29 @@
+<h1>List of Dog Walks</h1>
+
+ <table class="table table-striped">
+  <thead>
+	<th>Town</th>
+    <th>County</th>
+    <th>Distance km</th>
+    <th>Directions</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </thead>
+<tbody>
+<% @dog_walks.each do |dog_walk| %>
+  <tr>
+    <td><%= dog_walk.town %></td>
+    <td><%= dog_walk.county %></td>
+    <td><%= dog_walk.distance %></td>
+    <td><%= link_to 'Show', dog_walk %></td>
+    <td><%= link_to 'Edit', edit_dog_walk_path(dog_walk) %></td>
+    <td><%= link_to 'Destroy', dog_walk, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+ </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Dog walk', new_dog_walk_path %>

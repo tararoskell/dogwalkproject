@@ -1,0 +1,12 @@
+<%= simple_form_for(@dog_walk, html: { class: "form-horizontal"}) do |f| %>
+  <%= f.error_notification %>
+
+    <%= f.input :town %>
+    <%= f.input :county %>
+    <%= f.input :distance, label: 'Distance km' %>
+    <%= f.input :directions, as: :text, input_html: { rows: "3" } %>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

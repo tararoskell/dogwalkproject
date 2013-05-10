@@ -1,0 +1,22 @@
+<div class="row">
+	<div class="span6 offset3">
+		<div class="well">
+			<p>
+  			<%= @dog_walk.town %>
+			</p>
+			<p>
+  			<%= @dog_walk.county %>
+			</p>
+			<p>
+  			<%= @dog_walk.distance %>
+			</p>
+			<p>
+  			<%= @dog_walk.directions %>
+			</p>
+<%= link_to 'Edit', edit_dog_walk_path(@dog_walk) %> |
+<%= link_to 'Back', dog_walks_path %>
+
+</div>
+</div>
+</div>
+

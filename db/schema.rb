@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130509151248) do
+ActiveRecord::Schema.define(:version => 20130510160057) do
+
+  create_table "dog_walks", :force => true do |t|
+    t.string   "town"
+    t.string   "county"
+    t.text     "directions"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.float    "distance"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

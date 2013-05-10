@@ -1,4 +1,7 @@
 Dogwalksproject::Application.routes.draw do
+  resources :dog_walks
+
+
   devise_for :users
 
 match "/about" => "pages#about"  
