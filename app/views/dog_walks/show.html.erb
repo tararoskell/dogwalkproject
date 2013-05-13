@@ -1,19 +1,17 @@
 <div class="row">
-	<div class="span6 offset3">
+	<div class="span8">
 		<div class="well">
-			<p>
-  			<%= @dog_walk.town %>
+			<p><strong>Town/Village:</strong> <%= @dog_walk.town %>
+			<p><strong>County: </strong><%= @dog_walk.county %>
 			</p>
-			<p>
-  			<%= @dog_walk.county %>
+			<p><strong>Distance km: </strong><%= @dog_walk.distance %>
 			</p>
-			<p>
-  			<%= @dog_walk.distance %>
+			<p><strong>Directions: </strong><%= @dog_walk.directions %>
 			</p>
-			<p>
-  			<%= @dog_walk.directions %>
-			</p>
-<%= link_to 'Edit', edit_dog_walk_path(@dog_walk) %> |
+			<p><%= image_tag @dog_walk.image(:medium) %></p>
+<% if current_user == @dog_walk.user %>
+<%= link_to 'Edit', edit_dog_walk_path(@dog_walk) %>  
+<% end %>|
 <%= link_to 'Back', dog_walks_path %>
 
 </div>

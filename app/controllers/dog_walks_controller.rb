@@ -1,6 +1,9 @@
 class DogWalksController < ApplicationController
+  
+  before_filter :authenticate_user!, except: [:index, :show]
   # GET /dog_walks
   # GET /dog_walks.json
+  
   def index
     @dog_walks = DogWalk.all
 
@@ -24,7 +27,7 @@ class DogWalksController < ApplicationController
   # GET /dog_walks/new
   # GET /dog_walks/new.json
   def new
-    @dog_walk = DogWalk.new
+    @dog_walk = current_user.dog_walks.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +37,13 @@ class DogWalksController < ApplicationController
 
   # GET /dog_walks/1/edit
   def edit
-    @dog_walk = DogWalk.find(params[:id])
+    @dog_walk = current_user.dog_walks.find(params[:id])
   end
 
   # POST /dog_walks
   # POST /dog_walks.json
   def create
-    @dog_walk = DogWalk.new(params[:dog_walk])
+    @dog_walk = current_user.dog_walks.new(params[:dog_walk])
 
     respond_to do |format|
       if @dog_walk.save
@@ -56,7 +59,7 @@ class DogWalksController < ApplicationController
   # PUT /dog_walks/1
   # PUT /dog_walks/1.json
   def update
-    @dog_walk = DogWalk.find(params[:id])
+    @dog_walk = current_user.dog_walks.find(params[:id])
 
     respond_to do |format|
       if @dog_walk.update_attributes(params[:dog_walk])
@@ -72,7 +75,7 @@ class DogWalksController < ApplicationController
   # DELETE /dog_walks/1
   # DELETE /dog_walks/1.json
   def destroy
-    @dog_walk = DogWalk.find(params[:id])
+    @dog_walk = current_user.dog_walks.find(params[:id])
     @dog_walk.destroy
 
     respond_to do |format|

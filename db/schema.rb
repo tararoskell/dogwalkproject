@@ -11,16 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130510160057) do
+ActiveRecord::Schema.define(:version => 20130513131608) do
 
   create_table "dog_walks", :force => true do |t|
     t.string   "town"
     t.string   "county"
     t.text     "directions"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.float    "distance"
+    t.integer  "user_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
+
+  add_index "dog_walks", ["user_id"], :name => "index_dog_walks_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

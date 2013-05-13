@@ -5,8 +5,12 @@
     <%= f.input :county %>
     <%= f.input :distance, label: 'Distance km' %>
     <%= f.input :directions, as: :text, input_html: { rows: "3" } %>
+  	<%= f.full_error :image_file_size, class: "alert alert-error" %>
+  	<%= f.full_error :image_content_type, class: "alert alert-error" %>
+
+  <%= f.input :image, label: "Upload an image" %>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "btn btn-primary" %>
   </div>
 <% end %>
