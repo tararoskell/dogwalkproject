@@ -1,0 +1,17 @@
+<div class="row">
+	<div class="span8">
+		<div class="well">
+			<h2>Member: <%= @user.name %></h2>
+			<p><%= image_tag @user.avatar.url(:medium) %></p>
+			
+<%= link_to 'Back', dog_walks_path %>
+
+<h4>Dog Walks by Member</h2>
+  <ul>
+<% @user.dog_walks.each do |dog_walk| %>
+<li>Town: <%= dog_walk.town %> | County: <%= dog_walk.county %> | Distance <%= dog_walk.distance %>km <%= link_to 'click here', dog_walk %></li>
+<% end %>
+</ul>
+</div>
+</div>
+</div>

@@ -17,7 +17,7 @@
     <td><%= dog_walk.county %></td>
     <td><%= dog_walk.distance %></td>
     <td><%= image_tag dog_walk.image(:thumb) %></td>
-    <td><%= dog_walk.user.name %></td>
+    <td><%= link_to dog_walk.user.name, dog_walk.user %></td> 
     <td><%= link_to 'Show', dog_walk %></td>
     <% if current_user == dog_walk.user %>
     <td><%= link_to 'Edit', edit_dog_walk_path(dog_walk) %></td>
@@ -31,3 +31,5 @@
 <br />
 
 <%= link_to 'New Dog walk', new_dog_walk_path %>
+
+

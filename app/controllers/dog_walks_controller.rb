@@ -11,6 +11,7 @@ class DogWalksController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @dog_walks }
     end
+    
   end
 
   # GET /dog_walks/1

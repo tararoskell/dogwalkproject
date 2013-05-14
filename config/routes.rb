@@ -3,8 +3,11 @@ Dogwalksproject::Application.routes.draw do
 
 
   devise_for :users
-match "/about" => "pages#about"  
-root :to => 'pages#home'
+  #match '/users/:id', :to => 'users#show', :as => :user, :via => :get
+  match 'users/:id' => 'users#show', as: :user
+  match '/users' => 'users#index'
+  match "/about" => "pages#about"   
+  root :to => 'pages#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
