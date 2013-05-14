@@ -3,7 +3,7 @@ class DogWalksController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
   # GET /dog_walks
   # GET /dog_walks.json
-  
+
   def index
     @dog_walks = DogWalk.all
 

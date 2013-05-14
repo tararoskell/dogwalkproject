@@ -3,7 +3,7 @@
 <p>Are there places you have walked your dog that you think other people woud enjoy then why not share them here. You will also be able to be find new places you could walk your dog</p>
 <p>
 	<% if user_signed_in? %>
-	<p><%= link_to "View dog walks", dog_walks_path %> or <%= link_to "Add a New Dod Walk", new_dog_walk_path %></p>
+	<p><%= link_to "View dog walks", dog_walks_path %> or <%= link_to "Add a New Dog Walk", new_dog_walk_path %></p>
 	<% else %>
 		<%= link_to "Sign Up Now!", new_user_registration_path , class: "btn btn-large btn-primary" %> <br />or <%= link_to "sign in", new_user_session_path %></a>
 	<% end %>	
