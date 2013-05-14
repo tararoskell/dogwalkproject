@@ -1,5 +1,5 @@
 class DogWalk < ActiveRecord::Base
-  attr_accessible :county, :directions, :distance, :town, :image
+  attr_accessible :county, :directions, :distance, :town, :image, :image_delete
   validates :town, presence: true
   validates :county, presence: true
   validates :distance, presence: true
@@ -9,5 +9,9 @@ class DogWalk < ActiveRecord::Base
                             size: { less_than: 5.megabytes }       
   belongs_to :user
   has_attached_file :image, styles: { medium: "640x480>", :thumb => "100x100>"}
+ #  before_save :destroy_image?
+  attr_accessor :image_delete
+  before_validation { image.clear if image_delete == '1' }
+
 
 end
