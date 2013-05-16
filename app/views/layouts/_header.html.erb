@@ -1,6 +1,7 @@
 <ul class="nav nav-pills">
 		<li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
 		<li class="<%= 'active' if current_page?(about_path) %>"><%= link_to "About", about_path %></li>
+		<li class="<%= 'active' if current_page?(dog_walks_path) %>"><%= link_to "Dog Walks", dog_walks_path %></li>
 	<% if user_signed_in? %>
 		<li class="pull-right"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
 		<li class="pull-right"><%= link_to "Edit Profile", edit_user_registration_path %></li>
