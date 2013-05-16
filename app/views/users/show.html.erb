@@ -2,7 +2,7 @@
 	<div class="span8">
 		<div class="well">
 			<h2>Member: <%= @user.name %></h2>
-			<p><%= image_tag @user.avatar.url(:medium) %></p>
+			<p><%= image_tag @user.avatar.url(:thumb) %></p>
 			
 <%= link_to 'Back', dog_walks_path %>
 
