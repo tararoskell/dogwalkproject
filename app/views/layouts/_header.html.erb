@@ -4,6 +4,7 @@
 	<% if user_signed_in? %>
 		<li class="pull-right"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
 		<li class="pull-right"><%= link_to "Edit Profile", edit_user_registration_path %></li>
+		<li class="pull-right"><%= link_to "My Dog Walks", current_user %></li>
 	<% else %>
 		<li class="pull-right"><%= link_to "Login", new_user_session_path %></li>
 	<% end %>

@@ -9,7 +9,7 @@
 <h4>Dog Walks by Member</h2>
   <ul>
 <% @user.dog_walks.each do |dog_walk| %>
-<li>Town: <%= dog_walk.town %> | County: <%= dog_walk.county %> | Distance <%= dog_walk.distance %>km <%= link_to 'click here', dog_walk %></li>
+<li>Town: <%= dog_walk.town %> | County: <%= dog_walk.county %> | Distance <%= dog_walk.distance %>km <%= link_to 'View Walk', dog_walk %><% if current_user == dog_walk.user %> | <%= link_to 'Edit Walk', edit_dog_walk_path(dog_walk) %> | <%= link_to 'Delete Walk', dog_walk, method: :delete, data: { confirm: 'Are you sure?' } %><% end %></li>
 <% end %>
 </ul>
 </div>
